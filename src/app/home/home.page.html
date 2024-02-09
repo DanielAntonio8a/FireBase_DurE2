@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="header-title">Manejo de LEDS</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <!-- Titulos de LEDS -->
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="12" size-sm="6" size-md="4" size-lg="3">
+        <ion-label class="led-title">LED 1</ion-label>
+      </ion-col>
+      <ion-col size="12" size-sm="6" size-md="4" size-lg="3">
+        <ion-label class="led-title">LED 2</ion-label>
+      </ion-col>
+      <ion-col size="12" size-sm="6" size-md="4" size-lg="3">
+        <ion-label class="led-title">LED 3</ion-label>
+      </ion-col>
+    </ion-row>
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <!-- Botones de LEDS -->
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="12" size-sm="6" size-md="4" size-lg="3">
+        <ion-button class="custom-button" (click)="encender('LED1')" [color]="getColor(estadoLed1)" fill="outline">
+          <ion-icon slot="start" name="power-outline"></ion-icon>
+          {{ estadoLed1 ? 'LED1 Encendido' : 'Encender LED1' }}
+        </ion-button>
+        <ion-button class="custom-button" (click)="apagar('LED1')" [color]="getColor(!estadoLed1)" fill="outline">
+          <ion-icon slot="start" name="power-outline"></ion-icon>
+          {{ estadoLed1 ? 'Apagar LED1' : 'LED1 Apagado' }}
+        </ion-button>
+      </ion-col>
+      <ion-col size="12" size-sm="6" size-md="4" size-lg="3">
+        <ion-button class="custom-button" (click)="encender('LED2')" [color]="getColor(estadoLed2)" fill="outline">
+          <ion-icon slot="start" name="power-outline"></ion-icon>
+          {{ estadoLed2 ? 'LED2 Encendido' : 'Encender LED2' }}
+        </ion-button>
+        <ion-button class="custom-button" (click)="apagar('LED2')" [color]="getColor(!estadoLed2)" fill="outline">
+          <ion-icon slot="start" name="power-outline"></ion-icon>
+          {{ estadoLed2 ? 'Apagar LED2' : 'LED2 Apagado' }}
+        </ion-button>
+      </ion-col>
+      <ion-col size="12" size-sm="6" size-md="4" size-lg="3">
+        <ion-button class="custom-button" (click)="encender('LED3')" [color]="getColor(estadoLed3)" fill="outline">
+          <ion-icon slot="start" name="power-outline"></ion-icon>
+          {{ estadoLed3 ? 'LED3 Encendido' : 'Encender LED3' }}
+        </ion-button>
+        <ion-button class="custom-button" (click)="apagar('LED3')" [color]="getColor(!estadoLed3)" fill="outline">
+          <ion-icon slot="start" name="power-outline"></ion-icon>
+          {{ estadoLed3 ? 'Apagar LED3' : 'LED3 Apagado' }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
